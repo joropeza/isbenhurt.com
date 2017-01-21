@@ -15,6 +15,20 @@
     </style>
 </head>
 <body>
-  <h1><center>No.</center></h1>
+  <h1><center id="injury-status">Yes.</center></h1>
 </body>
+<script>
+    function getInjuryStatus(data) {
+        var injured = false;
+        if (data && data.players) {
+            var player = data.players[0];
+            if (player) {
+                injured = !!player.injuryGameStatus;
+            }
+        }
+        var injuredMessage = injured ? 'Yes.' : 'No.';
+        document.getElementById('injury-status').innerText = injuredMessage;
+    }
+</script>
+<script src="http://api.fantasy.nfl.com/v1/players/details?playerId=2506109&callback=getInjuryStatus"></script>
 </html>
