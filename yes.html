@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
+    <title>Is Ben Roethlisberger hurt?</title>
+    <style>
+        body {background-color: black;}
+        h1   {
+            color: yellow;
+            font-size: 270px;
+            font-size: 40vw;
+            line-height: .8em;
+            margin: 0;
+        }
+        h4    {
+            color: yellow;
+        }
+        button {
+            padding: 1.05rem 2.75rem;
+            color: black;
+            background-color: yellow;
+            font-size: 10vw;
+            font-weight: 300;
+            border-radius: 12rem;
+            border: .2rem solid goldenrod;
+            -webkit-transition: color .3s,border .3s;
+            transition: color .3s,border .3s;
+            cursor: pointer;
+        }
+        button:focus {
+            outline:0;
+        }
+    </style>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-90595319-1', 'auto');
+        ga('send', 'pageview');
+
+        var panicGifs = [
+            "https://user-images.githubusercontent.com/1592038/30237158-e51d1e9e-94e0-11e7-8d6d-b5a155a26231.gif",
+            "https://user-images.githubusercontent.com/1592038/30237163-0215d054-94e1-11e7-8614-a4816cde2df8.gif",
+            "https://user-images.githubusercontent.com/1592038/30237167-1a84625e-94e1-11e7-986b-8ae585dc1f68.gif"
+        ];
+
+        function doPanic() {
+            var rootElement = document.getElementById("root");
+
+            var currentGifIndex = Number(rootElement.getAttribute("data-gif-index"));
+            var randomGifIndex = currentGifIndex;
+            while (randomGifIndex === currentGifIndex) {
+                randomGifIndex = Math.floor(Math.random() * 3);
+            }
+
+            rootElement.style.backgroundImage = "url(\"" + panicGifs[randomGifIndex] + "\")";
+            rootElement.setAttribute("data-gif-index", randomGifIndex);
+        }
+  </script>
+</head>
+<body id="root">
+  <h1><center id="injury-status">Yes.</center></h1>
+  <p>
+      <center>
+          <button onClick="doPanic()">PANIC</button>
+      </center>
+  </p>
+</body>
+</html>
