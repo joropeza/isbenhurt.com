@@ -1,17 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
     <title>Is Ben Roethlisberger hurt?</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-90595319-1', 'auto');
-        ga('send', 'pageview');
-
         var panicGifs = [
             "./images/30237158-e51d1e9e-94e0-11e7-8d6d-b5a155a26231.gif",
             "./images/30237163-0215d054-94e1-11e7-8614-a4816cde2df8.gif",
@@ -30,14 +23,29 @@
             rootElement.style.backgroundImage = "url(\"" + panicGifs[randomGifIndex] + "\")";
             rootElement.setAttribute("data-gif-index", randomGifIndex);
         }
-  </script>
+    </script>
 </head>
+
 <body id="root">
-  <h1><center id="injury-status">Yes.</center></h1>
-  <p>
-      <center>
-          <button onClick="doPanic()">PANIC</button>
-      </center>
-  </p>
+    <h1>
+        <center id="injury-status">Yes.</center>
+    </h1>
+    <p>
+        <center>
+            <button onClick="doPanic()">PANIC</button>
+        </center>
+    </p>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-90595319-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
+
 </html>
