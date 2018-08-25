@@ -1,16 +1,21 @@
 {
-    "short_name": "Is Ben Hurt",
-    "name": "Is Ben Hurt?",
-    "icons": [
-      {
-        "src": "/favicon-152.png",
-        "type": "image/png",
-        "sizes": "152x152"
-      }
-    ],
-    "start_url": "/index.html",
-    "background_color": "#000000",
-    "display": "standalone",
-    "scope": "/",
-    "theme_color": "#FFB612"
-  }
+  "short_name": "Is Ben Hurt",
+  "name": "Is Ben Hurt?",
+  "icons": [
+    {
+      "src": "/favicon-152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/images/1024px-Pittsburgh_Steelers_logo.svg.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FFB612"
+}
