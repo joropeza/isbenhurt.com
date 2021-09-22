@@ -2,57 +2,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" content="Is Ben Roethlisberger, quarterback for the Pittsburgh Steelers, hurt?">
-    <meta name="theme-color" content="#FFB612" />
-    <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
-    <link rel="canonical" href="https://isbenhurt.com" />
     <title>Is Ben Roethlisberger hurt?</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/serviceWorker.js').then(function (registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function (err) {
-                    // registration failed, sorry :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
+        var panicGifs = [
+            "./images/30237158-e51d1e9e-94e0-11e7-8d6d-b5a155a26231.gif",
+            "./images/30237163-0215d054-94e1-11e7-8614-a4816cde2df8.gif",
+            "./images/30237167-1a84625e-94e1-11e7-986b-8ae585dc1f68.gif"
+        ];
+
+        function doPanic() {
+            var rootElement = document.getElementById("root");
+
+            var currentGifIndex = Number(rootElement.getAttribute("data-gif-index"));
+            var randomGifIndex = currentGifIndex;
+            while (randomGifIndex === currentGifIndex) {
+                randomGifIndex = Math.floor(Math.random() * 3);
+            }
+
+            rootElement.style.backgroundImage = "url(\"" + panicGifs[randomGifIndex] + "\")";
+            rootElement.setAttribute("data-gif-index", randomGifIndex);
         }
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9GN63L8QS"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'G-R9GN63L8QS');
     </script>
 </head>
 
-<body>
-    <article>
-        <h1>
-            YES!!!
-        </h1>
-        <p>
-            <img src="terribleTowel.jpg" alt="this is a terrible towel. It's terrible." class="terrible-towel" />
-        </p>
-        <footer>
-            <a href="https://twitter.com/IsBenHurt" aria-label="IsBenHurt.com on Twitter">
-                <i class="fab fa-twitter" title="IsBenHurt.com on Twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/isbenhurt" aria-label="IsBenHurt.com on Instagram">
-                <i class="fab fa-instagram" title="IsBenHurt.com on Instagram"></i>
-            </a>
-        </footer>
-    </article>
+<body id="root">
+    <h1>
+        <center id="injury-status">Yes.</center>
+    </h1>
+    <p>
+        <center>
+            <button onClick="doPanic()">PANIC</button>
+        </center>
+    </p>
 </body>
 
 </html>
